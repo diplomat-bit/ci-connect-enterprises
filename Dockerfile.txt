@@ -1,0 +1,25 @@
+# Use a slim Node image for faster builds
+FROM node:20-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy dependency manifest
+COPY package.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the entire source code
+COPY . .
+
+# Build the static frontend
+RUN npm run build
+
+# Hugging Face Spaces use port 7860
+ENV PORT=7860
+EXPOSE 7860
+
+# Start the application using Vite's preview mode
+# "npm start" maps to: vite preview --port 7860 --host 0.0.0.0
+CMD ["npm", "start"]

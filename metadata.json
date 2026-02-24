@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Quantum Ledger Intelligence",
+  "description": "A high-performance financial dashboard integrating AI-driven forecasting, sustainability metrics, and corporate asset management using the Gemini API.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
