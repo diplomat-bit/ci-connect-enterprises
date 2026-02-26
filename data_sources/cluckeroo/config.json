@@ -1,0 +1,10 @@
+{
+    "name": "cluckeroo",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "cluckeroo",
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}
