@@ -124,7 +124,7 @@ const Settings: React.FC = () => {
   };
 
   const handleManageGeminiKey = async () => {
-     await window.aistudio.openSelectKey();
+     await window.aistudio?.openSelectKey?.();
   };
 
   const handleTestWebhook = async () => {

@@ -41,7 +41,7 @@ const ApiStatus: React.FC = () => {
     setLoadingReport(true);
     const systemSummary = COMPONENTS.map(c => `${c.name}: ${c.status}`).join(', ');
     const aiReport = await generateNeuralStatusReport(systemSummary);
-    setReport(aiReport);
+    setReport(aiReport || "Neural core online. All parity checks within tolerance.");
     setLoadingReport(false);
   };
 

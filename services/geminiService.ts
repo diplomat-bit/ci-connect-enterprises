@@ -139,7 +139,10 @@ export const generateNeuralSetting = async (context: string) => {
       }
     });
 
-    for (const part of response.candidates[0].content.parts) {
+    const candidates = response.candidates;
+    if (!candidates || candidates.length === 0) return null;
+
+    for (const part of candidates[0].content?.parts || []) {
       if (part.inlineData) {
         return `data:image/png;base64,${part.inlineData.data}`;
       }
@@ -165,7 +168,10 @@ export const generateProtocolVisual = async (title: string, description: string)
       }
     });
 
-    for (const part of response.candidates[0].content.parts) {
+    const candidates = response.candidates;
+    if (!candidates || candidates.length === 0) return null;
+
+    for (const part of candidates[0].content?.parts || []) {
       if (part.inlineData) {
         return `data:image/png;base64,${part.inlineData.data}`;
       }

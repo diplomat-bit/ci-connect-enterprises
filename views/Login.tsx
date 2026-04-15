@@ -35,7 +35,7 @@ const Login: React.FC = () => {
     
     // Check if key is already linked on mount
     const checkKey = async () => {
-      const hasKey = await window.aistudio.hasSelectedApiKey();
+      const hasKey = await window.aistudio?.hasSelectedApiKey?.() || false;
       setIsKeyLinked(hasKey);
     };
     checkKey();
@@ -48,11 +48,11 @@ const Login: React.FC = () => {
     
     // EXPLICIT SPOT FOR THE KEY:
     // This triggers the native Gemini API Key picker dialog.
-    const hasKey = await window.aistudio.hasSelectedApiKey();
+    const hasKey = await window.aistudio?.hasSelectedApiKey?.() || false;
     if (!hasKey) {
       addLog("AUTH: Initializing Gemini API Key Picker...");
       try {
-        await window.aistudio.openSelectKey();
+        await window.aistudio?.openSelectKey?.();
         setIsKeyLinked(true);
         addLog("AUTH: Key successfully linked to execution context.");
       } catch (err) {

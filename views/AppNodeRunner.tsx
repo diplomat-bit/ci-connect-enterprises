@@ -111,7 +111,7 @@ const AppNodeRunner: React.FC = () => {
                               <span className="text-zinc-400">{log}</span>
                            </div>
                          ))}
-                         {booting && <div className="animate-pulse text-blue-500">>>> INITIALIZING...</div>}
+                         {booting && <div className="animate-pulse text-blue-500">{" >>> "} INITIALIZING...</div>}
                       </div>
                    </div>
 

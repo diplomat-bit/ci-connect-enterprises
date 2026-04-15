@@ -91,7 +91,7 @@ const VoiceConcierge: React.FC = () => {
           (sessionRef.current as any) = { source, processor };
         },
         onmessage: async (msg) => {
-          const base64Audio = msg.serverContent?.modelTurn?.parts.find(p => p.inlineData)?.inlineData?.data;
+          const base64Audio = msg.serverContent?.modelTurn?.parts?.find((p: any) => p.inlineData)?.inlineData?.data;
           if (base64Audio) {
             const ctx = outAudioContextRef.current!;
             nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);

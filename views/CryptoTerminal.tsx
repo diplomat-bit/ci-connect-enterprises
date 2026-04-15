@@ -203,8 +203,8 @@ const CryptoTerminal: React.FC = () => {
                         <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Global Cap</p>
                         <p className="text-sm font-bold text-white mono">
                             ${globalData ? (globalData.total_market_cap.usd / 1e12).toFixed(2) : '--'}T
-                            <span className={`ml-2 text-[10px] ${globalData?.market_cap_change_percentage_24h_usd >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
-                                {globalData?.market_cap_change_percentage_24h_usd.toFixed(1)}%
+                            <span className={`ml-2 text-[10px] ${(globalData?.market_cap_change_percentage_24h_usd ?? 0) >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
+                                {globalData?.market_cap_change_percentage_24h_usd?.toFixed(1) || '0.0'}%
                             </span>
                         </p>
                     </div>

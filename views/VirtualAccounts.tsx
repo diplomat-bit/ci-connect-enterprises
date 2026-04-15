@@ -148,7 +148,7 @@ const VirtualAccounts: React.FC = () => {
         "Generate a professional 2-sentence summary for a financial reconciliation process. Mention 99.9% match accuracy and the resolution of 12 incoming virtual node signals across UK and EMEA regions. Tone: Technical and secure."
       );
       // Fix: Access .text helper directly from the SDK response object
-      setReconcileReport(response.text);
+      setReconcileReport(response.text || "Neural reconciliation complete. Signal integrity verified.");
     } catch (err) {
       setReconcileReport("Neural reconciliation complete. Signal integrity verified at 99.9%. All ledger entries matched with zero drift.");
     } finally {
